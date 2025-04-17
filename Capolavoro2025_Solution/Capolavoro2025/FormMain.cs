@@ -19,7 +19,20 @@ namespace Capolavoro2025
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            string marins = "";
+            SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Costo Quantità");
+        }
+
+        private void SettaDgv(DataGridView dgv, string intestazioni)
+        {
+            string[] intestazioniArray = intestazioni.Split(' ');
+            dgv.RowHeadersVisible = false;
+            dgv.ColumnHeadersVisible = true;
+            dgv.ColumnCount = intestazioniArray.Length;
+            for (int i = 0; i < intestazioniArray.Length; i++)
+            {
+                dgv.Columns[i].HeaderText = intestazioniArray[i];
+            }
+            dgv.ClearSelection();
         }
     }
 }
