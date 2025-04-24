@@ -19,10 +19,10 @@ namespace Capolavoro2025
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Costo Quantità");
+            SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Costo Quantità Codice","input.txt");
         }
 
-        private void SettaDgv(DataGridView dgv, string intestazioni)
+        private void SettaDgv(DataGridView dgv, string intestazioni, string file)
         {
             string[] intestazioniArray = intestazioni.Split(' ');
             dgv.RowHeadersVisible = false;
@@ -32,6 +32,7 @@ namespace Capolavoro2025
             {
                 dgv.Columns[i].HeaderText = intestazioniArray[i];
             }
+            ClsFile.RiempiDgv(dgv, file);
             dgv.ClearSelection();
         }
     }
