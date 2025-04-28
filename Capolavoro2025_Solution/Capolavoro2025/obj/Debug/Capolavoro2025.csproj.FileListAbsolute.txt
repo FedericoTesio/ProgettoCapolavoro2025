@@ -8,3 +8,14 @@ C:\Users\tesio\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro
 C:\Users\tesio\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.csproj.CoreCompileInputs.cache
 C:\Users\tesio\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.exe
 C:\Users\tesio\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.pdb
+C:\Users\Pc\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\bin\Debug\Capolavoro2025.exe.config
+C:\Users\Pc\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\bin\Debug\Capolavoro2025.exe
+C:\Users\Pc\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\bin\Debug\Capolavoro2025.pdb
+C:\Users\Pc\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.csproj.AssemblyReference.cache
+C:\Users\Pc\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.FormMain.resources
+C:\Users\Pc\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.Properties.Resources.resources
+C:\Users\Pc\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.csproj.GenerateResource.cache
+C:\Users\Pc\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.csproj.CoreCompileInputs.cache
+C:\Users\Pc\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.exe
+C:\Users\Pc\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.pdb
+C:\Users\Pc\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\bin\Debug\input.txt

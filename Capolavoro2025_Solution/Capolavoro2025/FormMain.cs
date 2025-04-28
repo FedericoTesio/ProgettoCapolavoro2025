@@ -19,7 +19,7 @@ namespace Capolavoro2025
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Costo Quantità Codice","input.txt");
+            SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Costo Quantità Codice", "input.txt");
         }
 
         private void SettaDgv(DataGridView dgv, string intestazioni, string file)
