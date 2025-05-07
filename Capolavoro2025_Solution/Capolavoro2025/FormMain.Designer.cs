@@ -43,6 +43,7 @@
             this.nudCosto = new System.Windows.Forms.NumericUpDown();
             this.nudQuantità = new System.Windows.Forms.NumericUpDown();
             this.txtDimensione = new System.Windows.Forms.TextBox();
+            this.btnRimuoviOggetto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMagazzino)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantità)).BeginInit();
@@ -52,23 +53,23 @@
             // 
             this.DgvMagazzino.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DgvMagazzino.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvMagazzino.Location = new System.Drawing.Point(2, 2);
-            this.DgvMagazzino.Margin = new System.Windows.Forms.Padding(2);
+            this.DgvMagazzino.Location = new System.Drawing.Point(3, 2);
+            this.DgvMagazzino.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvMagazzino.Name = "DgvMagazzino";
             this.DgvMagazzino.RowHeadersWidth = 51;
             this.DgvMagazzino.RowTemplate.Height = 24;
-            this.DgvMagazzino.Size = new System.Drawing.Size(416, 156);
+            this.DgvMagazzino.Size = new System.Drawing.Size(555, 192);
             this.DgvMagazzino.TabIndex = 0;
             // 
             // btnAggiungiPezzi
             // 
             this.btnAggiungiPezzi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAggiungiPezzi.Location = new System.Drawing.Point(2, 306);
-            this.btnAggiungiPezzi.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAggiungiPezzi.Location = new System.Drawing.Point(3, 377);
+            this.btnAggiungiPezzi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAggiungiPezzi.Name = "btnAggiungiPezzi";
-            this.btnAggiungiPezzi.Size = new System.Drawing.Size(157, 30);
+            this.btnAggiungiPezzi.Size = new System.Drawing.Size(209, 37);
             this.btnAggiungiPezzi.TabIndex = 1;
-            this.btnAggiungiPezzi.Text = "Aggiungi oggetti";
+            this.btnAggiungiPezzi.Text = "Aggiungi pezzi";
             this.btnAggiungiPezzi.UseVisualStyleBackColor = true;
             this.btnAggiungiPezzi.Click += new System.EventHandler(this.btnAggiungiPezzi_Click);
             // 
@@ -76,9 +77,10 @@
             // 
             this.lblOggetto.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.lblOggetto.AutoSize = true;
-            this.lblOggetto.Location = new System.Drawing.Point(13, 164);
+            this.lblOggetto.Location = new System.Drawing.Point(17, 202);
+            this.lblOggetto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOggetto.Name = "lblOggetto";
-            this.lblOggetto.Size = new System.Drawing.Size(48, 13);
+            this.lblOggetto.Size = new System.Drawing.Size(58, 16);
             this.lblOggetto.TabIndex = 2;
             this.lblOggetto.Text = "Oggetto:";
             // 
@@ -86,9 +88,10 @@
             // 
             this.lblMateriale.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.lblMateriale.AutoSize = true;
-            this.lblMateriale.Location = new System.Drawing.Point(13, 186);
+            this.lblMateriale.Location = new System.Drawing.Point(17, 229);
+            this.lblMateriale.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMateriale.Name = "lblMateriale";
-            this.lblMateriale.Size = new System.Drawing.Size(53, 13);
+            this.lblMateriale.Size = new System.Drawing.Size(66, 16);
             this.lblMateriale.TabIndex = 3;
             this.lblMateriale.Text = "Materiale:";
             // 
@@ -96,9 +99,10 @@
             // 
             this.lblDimensione.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.lblDimensione.AutoSize = true;
-            this.lblDimensione.Location = new System.Drawing.Point(12, 210);
+            this.lblDimensione.Location = new System.Drawing.Point(16, 258);
+            this.lblDimensione.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDimensione.Name = "lblDimensione";
-            this.lblDimensione.Size = new System.Drawing.Size(65, 13);
+            this.lblDimensione.Size = new System.Drawing.Size(82, 16);
             this.lblDimensione.TabIndex = 4;
             this.lblDimensione.Text = "Dimensione:";
             // 
@@ -106,9 +110,10 @@
             // 
             this.lblCosto.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.lblCosto.AutoSize = true;
-            this.lblCosto.Location = new System.Drawing.Point(13, 234);
+            this.lblCosto.Location = new System.Drawing.Point(17, 288);
+            this.lblCosto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCosto.Name = "lblCosto";
-            this.lblCosto.Size = new System.Drawing.Size(37, 13);
+            this.lblCosto.Size = new System.Drawing.Size(45, 16);
             this.lblCosto.TabIndex = 5;
             this.lblCosto.Text = "Costo:";
             // 
@@ -116,9 +121,10 @@
             // 
             this.lblQuantita.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.lblQuantita.AutoSize = true;
-            this.lblQuantita.Location = new System.Drawing.Point(13, 256);
+            this.lblQuantita.Location = new System.Drawing.Point(17, 315);
+            this.lblQuantita.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuantita.Name = "lblQuantita";
-            this.lblQuantita.Size = new System.Drawing.Size(50, 13);
+            this.lblQuantita.Size = new System.Drawing.Size(59, 16);
             this.lblQuantita.TabIndex = 6;
             this.lblQuantita.Text = "Quantità:";
             // 
@@ -126,59 +132,84 @@
             // 
             this.lblCodice.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.lblCodice.AutoSize = true;
-            this.lblCodice.Location = new System.Drawing.Point(10, 282);
+            this.lblCodice.Location = new System.Drawing.Point(13, 347);
+            this.lblCodice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodice.Name = "lblCodice";
-            this.lblCodice.Size = new System.Drawing.Size(43, 13);
+            this.lblCodice.Size = new System.Drawing.Size(53, 16);
             this.lblCodice.TabIndex = 7;
             this.lblCodice.Text = "Codice:";
             // 
             // txtOggetto
             // 
-            this.txtOggetto.Location = new System.Drawing.Point(68, 164);
+            this.txtOggetto.Location = new System.Drawing.Point(91, 202);
+            this.txtOggetto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtOggetto.Name = "txtOggetto";
-            this.txtOggetto.Size = new System.Drawing.Size(100, 20);
+            this.txtOggetto.Size = new System.Drawing.Size(132, 22);
             this.txtOggetto.TabIndex = 8;
             // 
             // txtMateriale
             // 
-            this.txtMateriale.Location = new System.Drawing.Point(68, 187);
+            this.txtMateriale.Location = new System.Drawing.Point(91, 230);
+            this.txtMateriale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMateriale.Name = "txtMateriale";
-            this.txtMateriale.Size = new System.Drawing.Size(100, 20);
+            this.txtMateriale.Size = new System.Drawing.Size(132, 22);
             this.txtMateriale.TabIndex = 9;
             // 
             // txtCodice
             // 
-            this.txtCodice.Location = new System.Drawing.Point(57, 279);
+            this.txtCodice.Location = new System.Drawing.Point(76, 343);
+            this.txtCodice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCodice.Name = "txtCodice";
-            this.txtCodice.Size = new System.Drawing.Size(100, 20);
+            this.txtCodice.Size = new System.Drawing.Size(132, 22);
             this.txtCodice.TabIndex = 10;
             // 
             // nudCosto
             // 
-            this.nudCosto.Location = new System.Drawing.Point(57, 234);
+            this.nudCosto.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            131072});
+            this.nudCosto.Location = new System.Drawing.Point(76, 288);
+            this.nudCosto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nudCosto.Name = "nudCosto";
-            this.nudCosto.Size = new System.Drawing.Size(120, 20);
+            this.nudCosto.Size = new System.Drawing.Size(160, 22);
             this.nudCosto.TabIndex = 11;
             // 
             // nudQuantità
             // 
-            this.nudQuantità.Location = new System.Drawing.Point(68, 256);
+            this.nudQuantità.Location = new System.Drawing.Point(91, 315);
+            this.nudQuantità.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nudQuantità.Name = "nudQuantità";
-            this.nudQuantità.Size = new System.Drawing.Size(120, 20);
+            this.nudQuantità.Size = new System.Drawing.Size(160, 22);
             this.nudQuantità.TabIndex = 12;
             // 
             // txtDimensione
             // 
-            this.txtDimensione.Location = new System.Drawing.Point(77, 210);
+            this.txtDimensione.Location = new System.Drawing.Point(103, 258);
+            this.txtDimensione.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDimensione.Name = "txtDimensione";
-            this.txtDimensione.Size = new System.Drawing.Size(100, 20);
+            this.txtDimensione.Size = new System.Drawing.Size(132, 22);
             this.txtDimensione.TabIndex = 13;
+            // 
+            // btnRimuoviOggetto
+            // 
+            this.btnRimuoviOggetto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRimuoviOggetto.Location = new System.Drawing.Point(3, 420);
+            this.btnRimuoviOggetto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRimuoviOggetto.Name = "btnRimuoviOggetto";
+            this.btnRimuoviOggetto.Size = new System.Drawing.Size(209, 37);
+            this.btnRimuoviOggetto.TabIndex = 14;
+            this.btnRimuoviOggetto.Text = "Rimuovi pezzi";
+            this.btnRimuoviOggetto.UseVisualStyleBackColor = true;
+            this.btnRimuoviOggetto.Click += new System.EventHandler(this.btnRimuoviOggetto_Click);
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(867, 366);
+            this.ClientSize = new System.Drawing.Size(1156, 468);
+            this.Controls.Add(this.btnRimuoviOggetto);
             this.Controls.Add(this.txtDimensione);
             this.Controls.Add(this.nudQuantità);
             this.Controls.Add(this.nudCosto);
@@ -193,7 +224,7 @@
             this.Controls.Add(this.lblOggetto);
             this.Controls.Add(this.btnAggiungiPezzi);
             this.Controls.Add(this.DgvMagazzino);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMain";
             this.Text = "Magazzino";
             this.Load += new System.EventHandler(this.FormMain_Load);
@@ -222,6 +253,7 @@
         private System.Windows.Forms.NumericUpDown nudCosto;
         private System.Windows.Forms.NumericUpDown nudQuantità;
         private System.Windows.Forms.TextBox txtDimensione;
+        private System.Windows.Forms.Button btnRimuoviOggetto;
     }
 }
 

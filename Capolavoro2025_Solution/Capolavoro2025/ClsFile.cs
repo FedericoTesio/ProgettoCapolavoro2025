@@ -33,8 +33,18 @@ namespace Capolavoro2025
             }
             sr.Close();
         }
-
-        public static void AggiungiPezziAlFile(string inputFile, TextBox txtOggetto, TextBox txtMateriale, TextBox txtDimensione, NumericUpDown nudCosto, NumericUpDown nudQuantità, TextBox txtCodice)
+        /// <summary>
+        /// Aggiunge un pezzo al file di input. Se il pezzo esiste già, aggiorna la quantità.
+        /// </summary>
+        /// <param name="inputFile"></param>
+        /// <param name="txtOggetto"></param>
+        /// <param name="txtMateriale"></param>
+        /// <param name="txtDimensione"></param>
+        /// <param name="nudCosto"></param>
+        /// <param name="nudQuantità"></param>
+        /// <param name="txtCodice"></param>
+        /// <returns> ritorna un bool cosi visualizziamo una messageBox che ci informa sulle azioni svolte</returns>
+        public static bool AggiungiPezziAlFile(string inputFile, TextBox txtOggetto, TextBox txtMateriale, TextBox txtDimensione, NumericUpDown nudCosto, NumericUpDown nudQuantità, TextBox txtCodice)
         {
             Pezzo nuovoPezzo = new Pezzo();
             nuovoPezzo.Nome = txtOggetto.Text;
@@ -44,28 +54,87 @@ namespace Capolavoro2025
             nuovoPezzo.Quantita = (int)nudQuantità.Value;
             nuovoPezzo.Codice = txtCodice.Text;
 
-            StreamReader sr = new StreamReader(inputFile);
-
+            List<string> righe = new List<string>();
             bool trovato = false;
 
-            int quantita;
-
-            while (!sr.EndOfStream && !trovato)
+            StreamReader sr = new StreamReader(inputFile);
+            while (!sr.EndOfStream)
             {
                 string riga = sr.ReadLine();
                 string[] valori = riga.Split(' ');
-                if (valori[0] == nuovoPezzo.Nome)
+
+                // controllo se il pezzo esiste già 
+                if (valori[5] == nuovoPezzo.Codice)
                 {
                     trovato = true;
-                    quantita = Convert.ToInt32(valori[4]) + nuovoPezzo.Quantita;
+                    int nuovaQuantita = Convert.ToInt32(valori[4]) + nuovoPezzo.Quantita;
+                    righe.Add($"{valori[0]} {valori[1]} {valori[2]} {valori[3]} {nuovaQuantita} {valori[5]}");
+                }
+                else
+                {
+                    righe.Add(riga);
                 }
             }
             sr.Close();
 
-            StreamWriter sw = new StreamWriter(inputFile);
-            sw.Equals(nuovoPezzo.Nome,);
+            // aggiungo il pezzo non esistente
+            if (!trovato)
+            {
+                righe.Add($"{nuovoPezzo.Nome} {nuovoPezzo.Materiale} {nuovoPezzo.Dimensione} {nuovoPezzo.Costo} {nuovoPezzo.Quantita} {nuovoPezzo.Codice}");
+            }
 
-           
+            // utilizzo un bool pk devo capire se devo sovrascrivere(false) o aggiungere(true)
+            StreamWriter sw = new StreamWriter(inputFile, false);
+            for (int i = 0; i < righe.Count; i++)
+            {
+                sw.WriteLine(righe[i]);
+            }
+            sw.Close();
+
+            return trovato;
+        }
+
+        internal static bool RimuoviPezziAlFile(string inputFile, TextBox txtOggetto, TextBox txtMateriale, TextBox txtDimensione, NumericUpDown nudCosto, NumericUpDown nudQuantità, TextBox txtCodice)
+        {
+            Pezzo pezzoDaRimuovere = new Pezzo();
+            pezzoDaRimuovere.Codice = txtCodice.Text;
+            pezzoDaRimuovere.Quantita = (int)nudQuantità.Value;
+
+            List<string> righe = new List<string>();
+            bool rimosso = false;
+
+            StreamReader sr = new StreamReader(inputFile);
+            while (!sr.EndOfStream)
+            {
+                string riga = sr.ReadLine();
+                string[] valori = riga.Split(' ');
+
+                if (valori[5] == pezzoDaRimuovere.Codice)
+                {
+                    int quantitaAttuale = Convert.ToInt32(valori[4]);
+                    int nuovaQuantita = quantitaAttuale - pezzoDaRimuovere.Quantita;
+
+                    if (nuovaQuantita > 0)
+                    {
+                        righe.Add($"{valori[0]} {valori[1]} {valori[2]} {valori[3]} {nuovaQuantita} {valori[5]}");
+                    }
+                    rimosso = true;
+                }
+                else
+                {
+                    righe.Add(riga);
+                }
+            }
+            sr.Close();
+
+            StreamWriter sw = new StreamWriter(inputFile, false);
+            for (int i = 0; i < righe.Count; i++)
+            {
+                sw.WriteLine(righe[i]);
+            }
+            sw.Close();
+
+            return rimosso;
         }
     }
 }

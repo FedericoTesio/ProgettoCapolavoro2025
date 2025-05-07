@@ -1,4 +1,4 @@
-﻿Tazza Ceramica Standard 6.00 120 TAZZA001
+Tazza Ceramica Standard 6.00 120 TAZZA001
 Cavo PVC/Metallo 1m 3.50 180 CAVO002
 Libro Flessibile Romanzo 9.50 100 LIBRO003
 Forchetta Acciaio Standard 2.00 250 FORCH004
@@ -122,7 +122,7 @@ Quaderno Carta A5 4.00 200 QUADERNO121
 Blocco Carta A4 6.00 180 BLOCCO122
 Penna Metallo/Plastica Blu 12.00 100 PENNA123
 Evidenziatore Plastica/Inchiostro Giallo 2.50 250 EVIDENZ124
-Gomma Gomma Standar 3.00 200 GOMMA125
+Gomma Gomma Standar 3.00 266 GOMMA125
 Matita Legno Standard 1.50 300 MATITA126
 Set Plastica Assortiti 10.00 150 SET127
 Colla Plastica/Adesivo Piccola 2.00 250 COLLA128
@@ -162,4 +162,4 @@ Libro Flessibile Romanzo 10.00 100 LIBRO161
 Quaderno Carta A4 5.00 150 QUADERNO162
 Penna Plastica Blu 0.50 300 PENNA163
 Matita Legno HB 0.30 200 MATITA164
-Gomma Morbida Standard 1.00 100 GOMMA165
+Gomma Morbida Standard 1.00 166 GOMMA165

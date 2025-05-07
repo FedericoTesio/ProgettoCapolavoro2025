@@ -39,7 +39,30 @@ namespace Capolavoro2025
 
         private void btnAggiungiPezzi_Click(object sender, EventArgs e)
         {
-            ClsFile.AggiungiPezziAlFile("input.txt",txtOggetto,txtMateriale,txtDimensione,nudCosto,nudQuantità,txtCodice);
+            bool modifica=ClsFile.AggiungiPezziAlFile("input.txt",txtOggetto,txtMateriale,txtDimensione,nudCosto,nudQuantità,txtCodice);
+            if(modifica)
+            {
+                MessageBox.Show("Pezzo già esistente, quantità aggiornata");
+            }
+            else
+            {
+                MessageBox.Show("Pezzo aggiunto");
+            }
+            SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Costo Quantità Codice", "input.txt");
+        }
+
+        private void btnRimuoviOggetto_Click(object sender, EventArgs e)
+        {
+            bool modifica = ClsFile.RimuoviPezziAlFile("input.txt", txtOggetto, txtMateriale, txtDimensione, nudCosto, nudQuantità, txtCodice);
+            if (modifica)
+            {
+                MessageBox.Show("Pezzo rimosso corretamente");
+            }
+            else
+            {
+                MessageBox.Show("Pezzo non trovato","ATTENZIONE");
+            }
+            SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Costo Quantità Codice", "input.txt");
         }
     }
 }
