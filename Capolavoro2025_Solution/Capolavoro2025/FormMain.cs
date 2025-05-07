@@ -12,6 +12,7 @@ namespace Capolavoro2025
 {
     public partial class FormMain : Form
     {
+
         public FormMain()
         {
             InitializeComponent();
@@ -34,6 +35,11 @@ namespace Capolavoro2025
             }
             ClsFile.RiempiDgv(dgv, file);
             dgv.ClearSelection();
+        }
+
+        private void btnAggiungiPezzi_Click(object sender, EventArgs e)
+        {
+            ClsFile.AggiungiPezziAlFile("input.txt",txtOggetto,txtMateriale,txtDimensione,nudCosto,nudQuantità,txtCodice);
         }
     }
 }
