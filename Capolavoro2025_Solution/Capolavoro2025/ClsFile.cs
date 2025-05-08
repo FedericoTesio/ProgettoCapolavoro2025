@@ -25,6 +25,7 @@ namespace Capolavoro2025
         public static void RiempiDgv(DataGridView dgv, string inputFile)
         {
             StreamReader sr = new StreamReader(inputFile);
+            dgv.Rows.Clear();
             while (!sr.EndOfStream)
             {
                 string riga = sr.ReadLine();

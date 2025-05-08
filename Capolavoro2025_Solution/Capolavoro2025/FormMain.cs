@@ -48,7 +48,8 @@ namespace Capolavoro2025
             {
                 MessageBox.Show("Pezzo aggiunto");
             }
-            SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Costo Quantità Codice", "input.txt");
+            ClsFile.RiempiDgv(DgvMagazzino, "input.txt");
+            //SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Costo Quantità Codice", "input.txt");
         }
 
         private void btnRimuoviOggetto_Click(object sender, EventArgs e)
@@ -62,7 +63,8 @@ namespace Capolavoro2025
             {
                 MessageBox.Show("Pezzo non trovato","ATTENZIONE");
             }
-            SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Costo Quantità Codice", "input.txt");
+            ClsFile.RiempiDgv(DgvMagazzino, "input.txt");
+            //SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Costo Quantità Codice", "input.txt");
         }
     }
 }
