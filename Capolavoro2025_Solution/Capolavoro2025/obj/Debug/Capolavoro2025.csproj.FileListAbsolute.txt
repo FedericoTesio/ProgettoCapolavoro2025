@@ -32,3 +32,4 @@ C:\Users\m.marino.3566\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Ca
 C:\Users\m.marino.3566\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.pdb
 C:\Users\tesio\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\bin\Debug\magazzino.txt
 C:\Users\Pc\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\bin\Debug\magazzino.txt
+C:\Users\tesio\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.FormOrdine.resources

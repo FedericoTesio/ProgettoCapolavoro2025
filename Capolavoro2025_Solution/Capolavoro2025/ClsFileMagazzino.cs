@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Capolavoro2025.ClsFile;
+using static Capolavoro2025.ClsFileMagazzino;
 
 namespace Capolavoro2025
 {
-    internal class ClsFile
+    internal class ClsFileMagazzino
     {
 
         public struct Pezzo
@@ -18,7 +18,7 @@ namespace Capolavoro2025
             public string Materiale;
             public string Dimensione;
             public string Peso;
-            public double Costo;
+            public string Costo;
             public int Quantita;
             public string Codice;
         }
@@ -54,7 +54,7 @@ namespace Capolavoro2025
             nuovoPezzo.Materiale = txtMateriale.Text;
             nuovoPezzo.Dimensione = txtDimensione.Text;
             nuovoPezzo.Peso = txtPeso.Text;
-            nuovoPezzo.Costo = (double)nudCosto.Value;
+            nuovoPezzo.Costo = nudCosto.Value.ToString() + "€";
             nuovoPezzo.Quantita = (int)nudQuantità.Value;
             nuovoPezzo.Codice = txtCodice.Text;
 
@@ -72,7 +72,7 @@ namespace Capolavoro2025
                 {
                     trovato = true;
                     int nuovaQuantita = Convert.ToInt32(valori[5]) + nuovoPezzo.Quantita;
-                    righe.Add($"{valori[0]} {valori[1]} {valori[2]} {valori[3]} {valori[4]} {nuovaQuantita} {valori[6]}");
+                    righe.Add($"{valori[0]}-{valori[1]}-{valori[2]}-{valori[3]}-{valori[4]}-{nuovaQuantita}-{valori[6]}");
                 }
                 else
                 {
@@ -84,11 +84,11 @@ namespace Capolavoro2025
             // aggiungo il pezzo non esistente
             if (!trovato)
             {
-                righe.Add($"{nuovoPezzo.Nome} {nuovoPezzo.Materiale} {nuovoPezzo.Dimensione} {nuovoPezzo.Peso} {nuovoPezzo.Costo} {nuovoPezzo.Quantita} {nuovoPezzo.Codice}");
+                righe.Add($"{nuovoPezzo.Nome}-{nuovoPezzo.Materiale}-{nuovoPezzo.Dimensione}-{nuovoPezzo.Peso}-{nuovoPezzo.Costo}-{nuovoPezzo.Quantita}-{nuovoPezzo.Codice}");
             }
 
             // utilizzo un bool pk devo capire se devo sovrascrivere(false) o aggiungere(true)
-            StreamWriter sw = new StreamWriter(magazzinoFile, false);
+            StreamWriter sw = new StreamWriter(magazzinoFile, true);
             for (int i = 0; i < righe.Count; i++)
             {
                 sw.WriteLine(righe[i]);
@@ -120,7 +120,7 @@ namespace Capolavoro2025
 
                     if (nuovaQuantita > 0)
                     {
-                        righe.Add($"{valori[0]} {valori[1]} {valori[2]} {valori[3]} {valori[4]} {nuovaQuantita} {valori[5]}");
+                        righe.Add($"{valori[0]}-{valori[1]}-{valori[2]}-{valori[3]}-{valori[4]}-{nuovaQuantita}-{valori[5]}");
                     }
                     rimosso = true;
                 }
@@ -161,72 +161,6 @@ namespace Capolavoro2025
             }
 
             return message;
-        }
-
-        internal static string CreaOrdine()
-        {
-            string OrdineFile = "Ordine.txt";
-            File.Create(OrdineFile).Close();
-
-            if (File.Exists(OrdineFile))
-            {
-                return "Ordine creato corretamente";
-                
-            }
-            return "";
-        }
-
-        private static bool CercaPezzoNelOrdine(string OrdineFile, string pezzo)
-        {
-            StreamReader sr = new StreamReader(OrdineFile);
-            while (!sr.EndOfStream)
-            {
-                string riga = sr.ReadLine();
-                string[] valori = riga.Split('-');
-
-                if (valori[6] == pezzo)
-                {
-
-                    return true;
-                }
-            }
-            sr.Close();
-            return false;
-        }
-
-        internal static string AggiungiPezzoOrdine(string pezzo, int quantita, string OrdineFile)
-        {
-            bool PezzoGiaPresente = CercaPezzoNelOrdine(OrdineFile, pezzo);
-
-            // Popolo la struct così mi salvo i dati del pezzo
-            Pezzo PezzoStruct = new Pezzo();
-            StreamReader sr = new StreamReader(OrdineFile);
-            while (!sr.EndOfStream)
-            {
-                string riga = sr.ReadLine();
-                string[] valori = riga.Split('-');
-
-                if (valori[6] == pezzo)
-                {
-                    PezzoStruct.Nome = valori[0];
-                    PezzoStruct.Materiale = valori[1];
-                    PezzoStruct.Dimensione = valori[2];
-                    PezzoStruct.Peso = valori[3];
-                    PezzoStruct.Costo = Convert.ToDouble(valori[4]);
-                    PezzoStruct.Quantita = Convert.ToInt32(valori[5]);
-                    PezzoStruct.Codice = valori[6];
-                }
-            }
-            sr.Close();
-
-            if (PezzoGiaPresente)
-            {
-                return "Il pezzo è già presente nell'ordine!";
-            }
-            StreamWriter sw = new StreamWriter(OrdineFile, true);
-            sw.WriteLine($"{PezzoStruct.Nome}-{PezzoStruct.Materiale}-{PezzoStruct.Dimensione}-{PezzoStruct.Peso}-{PezzoStruct.Costo}-{quantita}-{pezzo}");
-            sw.Close();
-            return "Pezzo aggiunto all'ordine correttamente!";
         }
     }
 }

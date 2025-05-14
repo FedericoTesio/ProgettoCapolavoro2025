@@ -13,17 +13,36 @@ namespace Capolavoro2025
 {
     public partial class FormMain : Form
     {
+        private static List<Form> allForms = new List<Form>();
 
         public FormMain()
         {
             InitializeComponent();
+            allForms.Add(this);
+        }
+
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (allForms.Count <= 1)
+            {
+                Application.Exit();
+                e.Cancel = false;
+            }
+            else
+            {
+                allForms.Remove((Form)sender);
+                e.Cancel = true;
+            }
+        }
+
+        private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            allForms.Remove((Form)sender);
         }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
             SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "magazzino.txt");
-            btnElliminaOrdine.Enabled = false;
-            btnAggiungiPezzoOrdine.Enabled = false;
         }
 
         private void SettaDgv(DataGridView dgv, string intestazioni, string file)
@@ -36,7 +55,7 @@ namespace Capolavoro2025
             {
                 dgv.Columns[i].HeaderText = intestazioniArray[i];
             }
-            ClsFile.RiempiDgv(dgv, file);
+            ClsFileMagazzino.RiempiDgv(dgv, file);
             dgv.ClearSelection();
         }
 
@@ -54,7 +73,7 @@ namespace Capolavoro2025
                 return;
             }
 
-            bool modifica = ClsFile.AggiungiPezziAlFile("magazzino.txt", txtOggetto, txtMateriale, txtDimensione, txtPeso, nudCosto, nudQuantità, txtCodice);
+            bool modifica = ClsFileMagazzino.AggiungiPezziAlFile("magazzino.txt", txtOggetto, txtMateriale, txtDimensione, txtPeso, nudCosto, nudQuantità, txtCodice);
             if (modifica)
             {
                 MessageBox.Show("Pezzo già esistente, quantità aggiornata");
@@ -63,7 +82,7 @@ namespace Capolavoro2025
             {
                 MessageBox.Show("Pezzo aggiunto");
             }
-            ClsFile.RiempiDgv(DgvMagazzino, "magazzino.txt");
+            ClsFileMagazzino.RiempiDgv(DgvMagazzino, "magazzino.txt");
             //SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Costo Quantità Codice", "magazzino.txt");
         }
 
@@ -81,7 +100,7 @@ namespace Capolavoro2025
                 return;
             }
 
-            bool modifica = ClsFile.RimuoviPezziAlFile("magazzino.txt", txtOggetto, txtMateriale, txtDimensione, txtPeso, nudCosto, nudQuantità, txtCodice);
+            bool modifica = ClsFileMagazzino.RimuoviPezziAlFile("magazzino.txt", txtOggetto, txtMateriale, txtDimensione, txtPeso, nudCosto, nudQuantità, txtCodice);
             if (modifica)
             {
                 MessageBox.Show("Pezzo rimosso corretamente");
@@ -90,7 +109,7 @@ namespace Capolavoro2025
             {
                 MessageBox.Show("Pezzo non trovato", "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            ClsFile.RiempiDgv(DgvMagazzino, "magazzino.txt");
+            ClsFileMagazzino.RiempiDgv(DgvMagazzino, "magazzino.txt");
             //SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Costo Quantità Codice", "magazzino.txt");
         }
 
@@ -114,7 +133,7 @@ namespace Capolavoro2025
                 }
             } while (pezzo == "");
 
-            string message = ClsFile.CercaPezzoNelFile("magazzino.txt", DgvMagazzino, pezzo);
+            string message = ClsFileMagazzino.CercaPezzoNelFile("magazzino.txt", DgvMagazzino, pezzo);
 
             if (message == "")
             {
@@ -126,48 +145,13 @@ namespace Capolavoro2025
             }
         }
 
-        private void btnCreaOrdine_Click(object sender, EventArgs e)
+        private void btnOrdina_Click(object sender, EventArgs e)
         {
-            
-            string message = ClsFile.CreaOrdine();
-            if (message != "")
-            {
-                MessageBox.Show(message, "INFORMAZIONE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnElliminaOrdine.Enabled = true;
-                btnAggiungiPezzoOrdine.Enabled = true;
-
-                // Setta il DataGridView per l'ordine
-                SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "Ordine.txt");
-            }
-            else
-            {
-                MessageBox.Show("Errore nella creazione dell' ordine", "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-        }
-
-        private void btnAggiungiPezzoOrdine_Click(object sender, EventArgs e)
-        {
-            string pezzo;
-            int quantita;
-            do
-            {
-                pezzo = Interaction.InputBox("Inserisci il codice dell'oggetto da aggiungere al ordine:");
-                quantita = Convert.ToInt32(Interaction.InputBox("Inserisci la quantità del pezzo da aggiungere al ordine:"));
-                if (pezzo == "" || quantita <= 0)
-                {
-                    DialogResult annullaRisultato = MessageBox.Show("Vuoi annullare l'operazione?", "Conferma Annullamento", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (annullaRisultato == DialogResult.Yes)
-                    {
-                        return;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Inserire un pezzo valido!", "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            } while (pezzo == "" || quantita <= 0);
-            string message = ClsFile.AggiungiPezzoOrdine(pezzo, quantita, "Ordine.txt");
+            FormOrdine form = new FormOrdine();
+            allForms.Add(form);
+            this.Close();
+            this.Hide();
+            form.Show();
         }
     }
 }

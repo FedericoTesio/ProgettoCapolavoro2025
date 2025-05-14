@@ -50,6 +50,7 @@
             this.btnCreaOrdine = new System.Windows.Forms.Button();
             this.btnElliminaOrdine = new System.Windows.Forms.Button();
             this.btnAggiungiPezzoOrdine = new System.Windows.Forms.Button();
+            this.btnOrdina = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMagazzino)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantità)).BeginInit();
@@ -59,7 +60,7 @@
             // 
             this.DgvMagazzino.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DgvMagazzino.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvMagazzino.Location = new System.Drawing.Point(3, 2);
+            this.DgvMagazzino.Location = new System.Drawing.Point(12, 8);
             this.DgvMagazzino.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvMagazzino.Name = "DgvMagazzino";
             this.DgvMagazzino.RowHeadersWidth = 51;
@@ -243,47 +244,43 @@
             // 
             // btnCreaOrdine
             // 
-            this.btnCreaOrdine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreaOrdine.Location = new System.Drawing.Point(589, 11);
-            this.btnCreaOrdine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCreaOrdine.Location = new System.Drawing.Point(0, 0);
             this.btnCreaOrdine.Name = "btnCreaOrdine";
-            this.btnCreaOrdine.Size = new System.Drawing.Size(209, 37);
-            this.btnCreaOrdine.TabIndex = 18;
-            this.btnCreaOrdine.Text = "Crea ordine";
-            this.btnCreaOrdine.UseVisualStyleBackColor = true;
-            this.btnCreaOrdine.Click += new System.EventHandler(this.btnCreaOrdine_Click);
+            this.btnCreaOrdine.Size = new System.Drawing.Size(75, 23);
+            this.btnCreaOrdine.TabIndex = 0;
             // 
             // btnElliminaOrdine
             // 
-            this.btnElliminaOrdine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnElliminaOrdine.Location = new System.Drawing.Point(589, 96);
-            this.btnElliminaOrdine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnElliminaOrdine.Location = new System.Drawing.Point(0, 0);
             this.btnElliminaOrdine.Name = "btnElliminaOrdine";
-            this.btnElliminaOrdine.Size = new System.Drawing.Size(209, 37);
-            this.btnElliminaOrdine.TabIndex = 19;
-            this.btnElliminaOrdine.Text = "Ellimina ordine";
-            this.btnElliminaOrdine.UseVisualStyleBackColor = true;
+            this.btnElliminaOrdine.Size = new System.Drawing.Size(75, 23);
+            this.btnElliminaOrdine.TabIndex = 0;
             // 
             // btnAggiungiPezzoOrdine
             // 
-            this.btnAggiungiPezzoOrdine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAggiungiPezzoOrdine.Location = new System.Drawing.Point(589, 55);
-            this.btnAggiungiPezzoOrdine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAggiungiPezzoOrdine.Location = new System.Drawing.Point(0, 0);
             this.btnAggiungiPezzoOrdine.Name = "btnAggiungiPezzoOrdine";
-            this.btnAggiungiPezzoOrdine.Size = new System.Drawing.Size(209, 37);
-            this.btnAggiungiPezzoOrdine.TabIndex = 20;
-            this.btnAggiungiPezzoOrdine.Text = "Aggiungi pezzo al ordine";
-            this.btnAggiungiPezzoOrdine.UseVisualStyleBackColor = true;
-            this.btnAggiungiPezzoOrdine.Click += new System.EventHandler(this.btnAggiungiPezzoOrdine_Click);
+            this.btnAggiungiPezzoOrdine.Size = new System.Drawing.Size(75, 23);
+            this.btnAggiungiPezzoOrdine.TabIndex = 0;
+            // 
+            // btnOrdina
+            // 
+            this.btnOrdina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrdina.Location = new System.Drawing.Point(321, 258);
+            this.btnOrdina.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOrdina.Name = "btnOrdina";
+            this.btnOrdina.Size = new System.Drawing.Size(209, 37);
+            this.btnOrdina.TabIndex = 18;
+            this.btnOrdina.Text = "Ordina";
+            this.btnOrdina.UseVisualStyleBackColor = true;
+            this.btnOrdina.Click += new System.EventHandler(this.btnOrdina_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 492);
-            this.Controls.Add(this.btnAggiungiPezzoOrdine);
-            this.Controls.Add(this.btnElliminaOrdine);
-            this.Controls.Add(this.btnCreaOrdine);
+            this.Controls.Add(this.btnOrdina);
             this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.lblPeso);
             this.Controls.Add(this.btnCercaPezzo);
@@ -305,6 +302,8 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMain";
             this.Text = "Magazzino";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvMagazzino)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).EndInit();
@@ -338,6 +337,7 @@
         private System.Windows.Forms.Button btnCreaOrdine;
         private System.Windows.Forms.Button btnElliminaOrdine;
         private System.Windows.Forms.Button btnAggiungiPezzoOrdine;
+        private System.Windows.Forms.Button btnOrdina;
     }
 }
 
