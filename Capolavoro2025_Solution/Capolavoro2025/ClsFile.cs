@@ -162,5 +162,71 @@ namespace Capolavoro2025
 
             return message;
         }
+
+        internal static string CreaOrdine()
+        {
+            string OrdineFile = "Ordine.txt";
+            File.Create(OrdineFile).Close();
+
+            if (File.Exists(OrdineFile))
+            {
+                return "Ordine creato corretamente";
+                
+            }
+            return "";
+        }
+
+        private static bool CercaPezzoNelOrdine(string OrdineFile, string pezzo)
+        {
+            StreamReader sr = new StreamReader(OrdineFile);
+            while (!sr.EndOfStream)
+            {
+                string riga = sr.ReadLine();
+                string[] valori = riga.Split('-');
+
+                if (valori[6] == pezzo)
+                {
+
+                    return true;
+                }
+            }
+            sr.Close();
+            return false;
+        }
+
+        internal static string AggiungiPezzoOrdine(string pezzo, int quantita, string OrdineFile)
+        {
+            bool PezzoGiaPresente = CercaPezzoNelOrdine(OrdineFile, pezzo);
+
+            // Popolo la struct così mi salvo i dati del pezzo
+            Pezzo PezzoStruct = new Pezzo();
+            StreamReader sr = new StreamReader(OrdineFile);
+            while (!sr.EndOfStream)
+            {
+                string riga = sr.ReadLine();
+                string[] valori = riga.Split('-');
+
+                if (valori[6] == pezzo)
+                {
+                    PezzoStruct.Nome = valori[0];
+                    PezzoStruct.Materiale = valori[1];
+                    PezzoStruct.Dimensione = valori[2];
+                    PezzoStruct.Peso = valori[3];
+                    PezzoStruct.Costo = Convert.ToDouble(valori[4]);
+                    PezzoStruct.Quantita = Convert.ToInt32(valori[5]);
+                    PezzoStruct.Codice = valori[6];
+                }
+            }
+            sr.Close();
+
+            if (PezzoGiaPresente)
+            {
+                return "Il pezzo è già presente nell'ordine!";
+            }
+            StreamWriter sw = new StreamWriter(OrdineFile, true);
+            sw.WriteLine($"{PezzoStruct.Nome}-{PezzoStruct.Materiale}-{PezzoStruct.Dimensione}-{PezzoStruct.Peso}-{PezzoStruct.Costo}-{quantita}-{pezzo}");
+            sw.Close();
+            return "Pezzo aggiunto all'ordine correttamente!";
+        }
     }
 }

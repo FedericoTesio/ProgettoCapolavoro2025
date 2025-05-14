@@ -47,6 +47,9 @@
             this.btnCercaPezzo = new System.Windows.Forms.Button();
             this.txtPeso = new System.Windows.Forms.TextBox();
             this.lblPeso = new System.Windows.Forms.Label();
+            this.btnCreaOrdine = new System.Windows.Forms.Button();
+            this.btnElliminaOrdine = new System.Windows.Forms.Button();
+            this.btnAggiungiPezzoOrdine = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMagazzino)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantità)).BeginInit();
@@ -238,11 +241,49 @@
             this.lblPeso.TabIndex = 16;
             this.lblPeso.Text = "Peso:";
             // 
+            // btnCreaOrdine
+            // 
+            this.btnCreaOrdine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreaOrdine.Location = new System.Drawing.Point(589, 11);
+            this.btnCreaOrdine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCreaOrdine.Name = "btnCreaOrdine";
+            this.btnCreaOrdine.Size = new System.Drawing.Size(209, 37);
+            this.btnCreaOrdine.TabIndex = 18;
+            this.btnCreaOrdine.Text = "Crea ordine";
+            this.btnCreaOrdine.UseVisualStyleBackColor = true;
+            this.btnCreaOrdine.Click += new System.EventHandler(this.btnCreaOrdine_Click);
+            // 
+            // btnElliminaOrdine
+            // 
+            this.btnElliminaOrdine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnElliminaOrdine.Location = new System.Drawing.Point(589, 96);
+            this.btnElliminaOrdine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnElliminaOrdine.Name = "btnElliminaOrdine";
+            this.btnElliminaOrdine.Size = new System.Drawing.Size(209, 37);
+            this.btnElliminaOrdine.TabIndex = 19;
+            this.btnElliminaOrdine.Text = "Ellimina ordine";
+            this.btnElliminaOrdine.UseVisualStyleBackColor = true;
+            // 
+            // btnAggiungiPezzoOrdine
+            // 
+            this.btnAggiungiPezzoOrdine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAggiungiPezzoOrdine.Location = new System.Drawing.Point(589, 55);
+            this.btnAggiungiPezzoOrdine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAggiungiPezzoOrdine.Name = "btnAggiungiPezzoOrdine";
+            this.btnAggiungiPezzoOrdine.Size = new System.Drawing.Size(209, 37);
+            this.btnAggiungiPezzoOrdine.TabIndex = 20;
+            this.btnAggiungiPezzoOrdine.Text = "Aggiungi pezzo al ordine";
+            this.btnAggiungiPezzoOrdine.UseVisualStyleBackColor = true;
+            this.btnAggiungiPezzoOrdine.Click += new System.EventHandler(this.btnAggiungiPezzoOrdine_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 492);
+            this.Controls.Add(this.btnAggiungiPezzoOrdine);
+            this.Controls.Add(this.btnElliminaOrdine);
+            this.Controls.Add(this.btnCreaOrdine);
             this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.lblPeso);
             this.Controls.Add(this.btnCercaPezzo);
@@ -294,6 +335,9 @@
         private System.Windows.Forms.Button btnCercaPezzo;
         private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.Label lblPeso;
+        private System.Windows.Forms.Button btnCreaOrdine;
+        private System.Windows.Forms.Button btnElliminaOrdine;
+        private System.Windows.Forms.Button btnAggiungiPezzoOrdine;
     }
 }
 
