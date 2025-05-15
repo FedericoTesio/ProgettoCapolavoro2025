@@ -47,6 +47,7 @@ namespace Capolavoro2025
 
         private void SettaDgv(DataGridView dgv, string intestazioni, string file)
         {
+            dgv.Rows.Clear();
             string[] intestazioniArray = intestazioni.Split(' ');
             dgv.RowHeadersVisible = false;
             dgv.ColumnHeadersVisible = true;

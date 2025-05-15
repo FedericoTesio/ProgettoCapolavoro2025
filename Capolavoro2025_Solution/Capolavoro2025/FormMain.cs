@@ -47,6 +47,7 @@ namespace Capolavoro2025
 
         private void SettaDgv(DataGridView dgv, string intestazioni, string file)
         {
+            dgv.Rows.Clear();
             string[] intestazioniArray = intestazioni.Split(' ');
             dgv.RowHeadersVisible = false;
             dgv.ColumnHeadersVisible = true;
@@ -152,6 +153,15 @@ namespace Capolavoro2025
             this.Close();
             this.Hide();
             form.Show();
+            string message = ClsFileOrdine.CreaOrdine();
+            if (message != "")
+            {
+                MessageBox.Show(message, "INFORMAZIONE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Errore nella creazione dell' ordine", "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

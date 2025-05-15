@@ -20,6 +20,20 @@ namespace Capolavoro2025
             public int Quantita;
             public string Codice;
         }
+
+        public static string CreaOrdine()
+        {
+            string OrdineFile = "Ordine.txt";
+            File.Create(OrdineFile).Close();
+
+            if (File.Exists(OrdineFile))
+            {
+                return "Ordine creato corretamente";
+
+            }
+            return "";
+        }
+
         private static bool CercaPezzoNelOrdine(string OrdineFile, string pezzo)
         {
             StreamReader sr = new StreamReader(OrdineFile);
