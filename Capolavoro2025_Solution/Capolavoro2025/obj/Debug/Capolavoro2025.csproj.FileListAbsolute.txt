@@ -46,3 +46,4 @@ C:\Users\f.tesio.3619\Documents\ProgettoCapolavoro2025\Capolavoro2025_Solution\C
 C:\Users\f.tesio.3619\Documents\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.csproj.CoreCompileInputs.cache
 C:\Users\f.tesio.3619\Documents\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.exe
 C:\Users\f.tesio.3619\Documents\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.pdb
+C:\Users\tesio\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.FormMagazzino.resources

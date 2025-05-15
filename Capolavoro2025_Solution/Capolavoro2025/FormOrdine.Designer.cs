@@ -40,32 +40,32 @@
             // DgvMagazzino
             // 
             this.DgvMagazzino.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvMagazzino.Location = new System.Drawing.Point(11, 10);
-            this.DgvMagazzino.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DgvMagazzino.Location = new System.Drawing.Point(15, 12);
+            this.DgvMagazzino.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvMagazzino.Name = "DgvMagazzino";
             this.DgvMagazzino.RowHeadersWidth = 51;
             this.DgvMagazzino.RowTemplate.Height = 24;
-            this.DgvMagazzino.Size = new System.Drawing.Size(720, 122);
+            this.DgvMagazzino.Size = new System.Drawing.Size(960, 150);
             this.DgvMagazzino.TabIndex = 0;
             // 
             // DgvOrdine
             // 
             this.DgvOrdine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvOrdine.Location = new System.Drawing.Point(11, 188);
-            this.DgvOrdine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DgvOrdine.Location = new System.Drawing.Point(15, 231);
+            this.DgvOrdine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvOrdine.Name = "DgvOrdine";
             this.DgvOrdine.RowHeadersWidth = 51;
             this.DgvOrdine.RowTemplate.Height = 24;
-            this.DgvOrdine.Size = new System.Drawing.Size(720, 122);
+            this.DgvOrdine.Size = new System.Drawing.Size(960, 150);
             this.DgvOrdine.TabIndex = 1;
             // 
             // btnCercaPezzo
             // 
             this.btnCercaPezzo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCercaPezzo.Location = new System.Drawing.Point(213, 143);
-            this.btnCercaPezzo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCercaPezzo.Location = new System.Drawing.Point(284, 176);
+            this.btnCercaPezzo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCercaPezzo.Name = "btnCercaPezzo";
-            this.btnCercaPezzo.Size = new System.Drawing.Size(157, 30);
+            this.btnCercaPezzo.Size = new System.Drawing.Size(209, 37);
             this.btnCercaPezzo.TabIndex = 32;
             this.btnCercaPezzo.Text = "Cerca pezzo";
             this.btnCercaPezzo.UseVisualStyleBackColor = true;
@@ -74,10 +74,10 @@
             // btnAggiungiPezzo
             // 
             this.btnAggiungiPezzo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAggiungiPezzo.Location = new System.Drawing.Point(165, 321);
-            this.btnAggiungiPezzo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAggiungiPezzo.Location = new System.Drawing.Point(220, 395);
+            this.btnAggiungiPezzo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAggiungiPezzo.Name = "btnAggiungiPezzo";
-            this.btnAggiungiPezzo.Size = new System.Drawing.Size(157, 30);
+            this.btnAggiungiPezzo.Size = new System.Drawing.Size(209, 37);
             this.btnAggiungiPezzo.TabIndex = 33;
             this.btnAggiungiPezzo.Text = "Aggiungi pezzo all\'ordine";
             this.btnAggiungiPezzo.UseVisualStyleBackColor = true;
@@ -86,25 +86,25 @@
             // btnRimuoviPezzoOrdine
             // 
             this.btnRimuoviPezzoOrdine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRimuoviPezzoOrdine.Location = new System.Drawing.Point(349, 321);
-            this.btnRimuoviPezzoOrdine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRimuoviPezzoOrdine.Location = new System.Drawing.Point(465, 395);
+            this.btnRimuoviPezzoOrdine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRimuoviPezzoOrdine.Name = "btnRimuoviPezzoOrdine";
-            this.btnRimuoviPezzoOrdine.Size = new System.Drawing.Size(157, 30);
+            this.btnRimuoviPezzoOrdine.Size = new System.Drawing.Size(209, 37);
             this.btnRimuoviPezzoOrdine.TabIndex = 34;
             this.btnRimuoviPezzoOrdine.Text = "Rimuovi pezzo dall\'ordine";
             this.btnRimuoviPezzoOrdine.UseVisualStyleBackColor = true;
             // 
             // FormOrdine
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 405);
+            this.ClientSize = new System.Drawing.Size(994, 498);
             this.Controls.Add(this.btnRimuoviPezzoOrdine);
             this.Controls.Add(this.btnAggiungiPezzo);
             this.Controls.Add(this.btnCercaPezzo);
             this.Controls.Add(this.DgvOrdine);
             this.Controls.Add(this.DgvMagazzino);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormOrdine";
             this.Text = "Ordine";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormOrdine_FormClosing);

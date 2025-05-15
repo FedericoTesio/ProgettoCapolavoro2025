@@ -64,6 +64,12 @@
   <ItemGroup>
     <Compile Include="ClsFileMagazzino.cs" />
     <Compile Include="ClsFileOrdine.cs" />
+    <Compile Include="FormMagazzino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMagazzino.Designer.cs">
+      <DependentUpon>FormMagazzino.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormMagazzino.resx">
+      <DependentUpon>FormMagazzino.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
