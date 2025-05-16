@@ -33,6 +33,8 @@
             this.btnCercaPezzo = new System.Windows.Forms.Button();
             this.btnAggiungiPezzo = new System.Windows.Forms.Button();
             this.btnRimuoviPezzoOrdine = new System.Windows.Forms.Button();
+            this.btnInviaOrdine = new System.Windows.Forms.Button();
+            this.btnEllliminaOrdine = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMagazzino)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrdine)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +64,7 @@
             // btnCercaPezzo
             // 
             this.btnCercaPezzo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCercaPezzo.Location = new System.Drawing.Point(284, 176);
+            this.btnCercaPezzo.Location = new System.Drawing.Point(15, 179);
             this.btnCercaPezzo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCercaPezzo.Name = "btnCercaPezzo";
             this.btnCercaPezzo.Size = new System.Drawing.Size(209, 37);
@@ -74,7 +76,7 @@
             // btnAggiungiPezzo
             // 
             this.btnAggiungiPezzo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAggiungiPezzo.Location = new System.Drawing.Point(220, 395);
+            this.btnAggiungiPezzo.Location = new System.Drawing.Point(15, 395);
             this.btnAggiungiPezzo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAggiungiPezzo.Name = "btnAggiungiPezzo";
             this.btnAggiungiPezzo.Size = new System.Drawing.Size(209, 37);
@@ -86,7 +88,7 @@
             // btnRimuoviPezzoOrdine
             // 
             this.btnRimuoviPezzoOrdine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRimuoviPezzoOrdine.Location = new System.Drawing.Point(465, 395);
+            this.btnRimuoviPezzoOrdine.Location = new System.Drawing.Point(230, 395);
             this.btnRimuoviPezzoOrdine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRimuoviPezzoOrdine.Name = "btnRimuoviPezzoOrdine";
             this.btnRimuoviPezzoOrdine.Size = new System.Drawing.Size(209, 37);
@@ -94,11 +96,37 @@
             this.btnRimuoviPezzoOrdine.Text = "Rimuovi pezzo dall\'ordine";
             this.btnRimuoviPezzoOrdine.UseVisualStyleBackColor = true;
             // 
+            // btnInviaOrdine
+            // 
+            this.btnInviaOrdine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInviaOrdine.Location = new System.Drawing.Point(445, 395);
+            this.btnInviaOrdine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnInviaOrdine.Name = "btnInviaOrdine";
+            this.btnInviaOrdine.Size = new System.Drawing.Size(209, 37);
+            this.btnInviaOrdine.TabIndex = 35;
+            this.btnInviaOrdine.Text = "Invia ordine";
+            this.btnInviaOrdine.UseVisualStyleBackColor = true;
+            this.btnInviaOrdine.Click += new System.EventHandler(this.btnInviaOrdine_Click);
+            // 
+            // btnEllliminaOrdine
+            // 
+            this.btnEllliminaOrdine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEllliminaOrdine.Location = new System.Drawing.Point(660, 395);
+            this.btnEllliminaOrdine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEllliminaOrdine.Name = "btnEllliminaOrdine";
+            this.btnEllliminaOrdine.Size = new System.Drawing.Size(209, 37);
+            this.btnEllliminaOrdine.TabIndex = 36;
+            this.btnEllliminaOrdine.Text = "Ellimina ordine";
+            this.btnEllliminaOrdine.UseVisualStyleBackColor = true;
+            this.btnEllliminaOrdine.Click += new System.EventHandler(this.btnEllliminaOrdine_Click);
+            // 
             // FormOrdine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 498);
+            this.Controls.Add(this.btnEllliminaOrdine);
+            this.Controls.Add(this.btnInviaOrdine);
             this.Controls.Add(this.btnRimuoviPezzoOrdine);
             this.Controls.Add(this.btnAggiungiPezzo);
             this.Controls.Add(this.btnCercaPezzo);
@@ -123,5 +151,7 @@
         private System.Windows.Forms.Button btnCercaPezzo;
         private System.Windows.Forms.Button btnAggiungiPezzo;
         private System.Windows.Forms.Button btnRimuoviPezzoOrdine;
+        private System.Windows.Forms.Button btnInviaOrdine;
+        private System.Windows.Forms.Button btnEllliminaOrdine;
     }
 }

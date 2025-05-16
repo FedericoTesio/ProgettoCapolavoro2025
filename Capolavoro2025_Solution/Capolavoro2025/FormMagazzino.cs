@@ -11,6 +11,16 @@ using Microsoft.VisualBasic;
 
 namespace Capolavoro2025
 {
+    public struct Pezzo
+    {
+        public string Nome;
+        public string Materiale;
+        public string Dimensione;
+        public string Peso;
+        public string Costo;
+        public int Quantita;
+        public string Codice;
+    }
     public partial class FormMagazzino : Form
     {
         private static List<Form> allForms = new List<Form>();
@@ -74,7 +84,19 @@ namespace Capolavoro2025
                 return;
             }
 
-            bool modifica = ClsFileMagazzino.AggiungiPezziAlFile("magazzino.txt", txtOggetto, txtMateriale, txtDimensione, txtPeso, nudCosto, nudQuantità, txtCodice);
+            // Popolo la struct così mi salvo i dati del pezzo
+
+            Pezzo pezzo = new Pezzo();
+
+            pezzo.Nome = txtOggetto.Text;
+            pezzo.Materiale = txtMateriale.Text;
+            pezzo.Dimensione = txtDimensione.Text;
+            pezzo.Peso = txtPeso.Text;
+            pezzo.Costo = nudCosto.Value.ToString() + "€";
+            pezzo.Quantita = (int)nudQuantità.Value;
+            pezzo.Codice = txtCodice.Text;
+
+            bool modifica = ClsFileMagazzino.AggiungiPezziAlFile("magazzino.txt", pezzo.Nome,pezzo.Materiale,pezzo.Dimensione,pezzo.Peso,pezzo.Costo,pezzo.Quantita,pezzo.Codice);
             if (modifica)
             {
                 MessageBox.Show("Pezzo già esistente, quantità aggiornata");
@@ -101,7 +123,19 @@ namespace Capolavoro2025
                 return;
             }
 
-            bool modifica = ClsFileMagazzino.RimuoviPezziAlFile("magazzino.txt", txtOggetto, txtMateriale, txtDimensione, txtPeso, nudCosto, nudQuantità, txtCodice);
+            // Popolo la struct così mi salvo i dati del pezzo
+
+            Pezzo pezzo = new Pezzo();
+
+            pezzo.Nome = txtOggetto.Text;
+            pezzo.Materiale = txtMateriale.Text;
+            pezzo.Dimensione = txtDimensione.Text;
+            pezzo.Peso = txtPeso.Text;
+            pezzo.Costo = nudCosto.Value.ToString() + "€";
+            pezzo.Quantita = (int)nudQuantità.Value;
+            pezzo.Codice = txtCodice.Text;
+
+            bool modifica = ClsFileMagazzino.RimuoviPezziAlFile("magazzino.txt", pezzo.Nome, pezzo.Materiale, pezzo.Dimensione, pezzo.Peso, pezzo.Costo, pezzo.Quantita, pezzo.Codice);
             if (modifica)
             {
                 MessageBox.Show("Pezzo rimosso corretamente");

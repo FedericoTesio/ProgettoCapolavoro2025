@@ -47,16 +47,16 @@ namespace Capolavoro2025
         /// <param name="nudQuantità"></param>
         /// <param name="txtCodice"></param>
         /// <returns> ritorna un bool cosi visualizziamo una messageBox che ci informa sulle azioni svolte</returns>
-        public static bool AggiungiPezziAlFile(string magazzinoFile, TextBox txtOggetto, TextBox txtMateriale, TextBox txtDimensione, TextBox txtPeso, NumericUpDown nudCosto, NumericUpDown nudQuantità, TextBox txtCodice)
+        public static bool AggiungiPezziAlFile(string magazzinoFile, string oggetto, string materiale, string dimensione, string peso, string costo, int quantità, string codice)
         {
             Pezzo nuovoPezzo = new Pezzo();
-            nuovoPezzo.Nome = txtOggetto.Text;
-            nuovoPezzo.Materiale = txtMateriale.Text;
-            nuovoPezzo.Dimensione = txtDimensione.Text;
-            nuovoPezzo.Peso = txtPeso.Text;
-            nuovoPezzo.Costo = nudCosto.Value.ToString() + "€";
-            nuovoPezzo.Quantita = (int)nudQuantità.Value;
-            nuovoPezzo.Codice = txtCodice.Text;
+            nuovoPezzo.Nome = oggetto;
+            nuovoPezzo.Materiale = materiale;
+            nuovoPezzo.Dimensione = dimensione;
+            nuovoPezzo.Peso = peso;
+            nuovoPezzo.Costo = costo;
+            nuovoPezzo.Quantita = quantità;
+            nuovoPezzo.Codice = codice;
 
             List<string> righe = new List<string>();
             bool trovato = false;
@@ -98,11 +98,11 @@ namespace Capolavoro2025
             return trovato;
         }
 
-        public static bool RimuoviPezziAlFile(string magazzinoFile, TextBox txtOggetto, TextBox txtMateriale, TextBox txtDimensione, TextBox txtPeso, NumericUpDown nudCosto, NumericUpDown nudQuantità, TextBox txtCodice)
+        public static bool RimuoviPezziAlFile(string magazzinoFile, string oggetto, string materiale, string dimensione, string peso,string Costo, int quantità, string codice)
         {
             Pezzo pezzoDaRimuovere = new Pezzo();
-            pezzoDaRimuovere.Codice = txtCodice.Text;
-            pezzoDaRimuovere.Quantita = (int)nudQuantità.Value;
+            pezzoDaRimuovere.Codice = codice;
+            pezzoDaRimuovere.Quantita = quantità;
 
             List<string> righe = new List<string>();
             bool rimosso = false;

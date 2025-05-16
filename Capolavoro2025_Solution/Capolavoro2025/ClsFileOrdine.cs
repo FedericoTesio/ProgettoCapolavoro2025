@@ -84,11 +84,13 @@ namespace Capolavoro2025
                 }
             }
             sr.Close();
-            if (trovato) {
+            if (trovato)
+            {
                 StreamWriter sw = new StreamWriter(OrdineFile, true);
                 sw.WriteLine($"{PezzoStruct.Nome}-{PezzoStruct.Materiale}-{PezzoStruct.Dimensione}-{PezzoStruct.Peso}-{PezzoStruct.Costo}-{quantita}-{pezzo}");
                 sw.Close();
                 string[] message = { "Pezzo aggiunto all'ordine correttamente!", "1" };
+                ClsFileMagazzino.RimuoviPezziAlFile("magazzino.txt", PezzoStruct.Nome, PezzoStruct.Materiale, PezzoStruct.Dimensione, PezzoStruct.Peso, PezzoStruct.Costo, PezzoStruct.Quantita, PezzoStruct.Codice);
                 return message;
             }
             else
@@ -96,6 +98,45 @@ namespace Capolavoro2025
                 string[] message = { "Pezzo non trovato!", "2" };
                 return message;
             }
+        }
+
+        internal static void ElliminaOrdine(string file)
+        {
+            File.Delete(file);
+        }
+
+        internal static string CalcolaPrezzoTotale(string file)
+        {
+            int prezzoTotale = 0;
+            int prezzo = 0;
+            int quantita = 0;
+            StreamReader sr = new StreamReader(file);
+
+            while (!sr.EndOfStream)
+            {
+                string riga = sr.ReadLine();
+                string[] valori = riga.Split('-');
+                quantita = Convert.ToInt32(valori[5]);
+                prezzo = Convert.ToInt32(valori[4].Replace("€", ""));
+                prezzoTotale += prezzo * quantita;
+            }
+            return prezzoTotale.ToString() + "€";
+
+            sr.Close();
+        }
+
+        internal static void RiportaQuantits(string fileOrdine, string fileMagazzino)
+        {
+            StreamReader sr = new StreamReader(fileOrdine);
+
+            while (!sr.EndOfStream)
+            {
+                string riga = sr.ReadLine();
+                string[] valori = riga.Split('-');
+                ClsFileMagazzino.AggiungiPezziAlFile(fileMagazzino, valori[0], valori[1], valori[2], valori[3], valori[4], Convert.ToInt32(valori[5]), valori[6]);
+            }
+
+            sr.Close();
         }
     }
 }

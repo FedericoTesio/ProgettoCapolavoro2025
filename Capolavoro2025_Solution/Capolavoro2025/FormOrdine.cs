@@ -115,6 +115,8 @@ namespace Capolavoro2025
             } while (pezzo == "" || Convert.ToInt32(quantita) <= 0);
             string[] message = ClsFileOrdine.AggiungiPezzoOrdine(pezzo, Convert.ToInt32(quantita), "ordine.txt");
             SettaDgv(DgvOrdine, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "ordine.txt");
+            SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "magazzino.txt");
+
             if (Convert.ToInt32(message[1]) == 2)
             {
                 MessageBox.Show(message[0], "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -122,6 +124,32 @@ namespace Capolavoro2025
             else
             {
                 MessageBox.Show(message[0], "INFORMAZIONE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            }
+        }
+
+        private void btnEllliminaOrdine_Click(object sender, EventArgs e)
+        {
+            ClsFileOrdine.ElliminaOrdine("ordine.txt");
+            SettaDgv(DgvOrdine, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "ordine.txt");
+            ClsFileOrdine.RiportaQuantits("ordine.txt", "magazzino.txt");
+            SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "magazzino.txt");
+            MessageBox.Show("Ordine elliminato con successo", "INFORMAZIONE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+
+        private void btnInviaOrdine_Click(object sender, EventArgs e)
+        {
+            string prezzoTotale = ClsFileOrdine.CalcolaPrezzoTotale("ordine.txt");
+            DialogResult confermaRisultato = MessageBox.Show($"Il prezzo totale dell'ordine è di {prezzoTotale}.\nVuoi confermare l'ordine?", "Conferma Ordine", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confermaRisultato == DialogResult.Yes)
+            {
+                MessageBox.Show("Ordine inviato con successo", "INFORMAZIONE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                ClsFileOrdine.ElliminaOrdine("ordine.txt");
+                ClsFileOrdine.CreaOrdine();
+                SettaDgv(DgvOrdine, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "ordine.txt");
+            }
+            else
+            {
+                MessageBox.Show("Ordine non inviato", "INFORMAZIONE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
         }
     }
