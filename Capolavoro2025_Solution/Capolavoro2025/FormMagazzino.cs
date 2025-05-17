@@ -135,7 +135,7 @@ namespace Capolavoro2025
             pezzo.Quantita = (int)nudQuantità.Value;
             pezzo.Codice = txtCodice.Text;
 
-            bool modifica = ClsFileMagazzino.RimuoviPezziAlFile("magazzino.txt", pezzo.Nome, pezzo.Materiale, pezzo.Dimensione, pezzo.Peso, pezzo.Costo, pezzo.Quantita, pezzo.Codice);
+            bool modifica = ClsFileMagazzino.RimuoviPezziAlFile("magazzino.txt", pezzo.Quantita, pezzo.Codice);
             if (modifica)
             {
                 MessageBox.Show("Pezzo rimosso corretamente");

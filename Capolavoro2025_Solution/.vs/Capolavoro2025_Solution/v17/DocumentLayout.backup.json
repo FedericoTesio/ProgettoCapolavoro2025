@@ -3,36 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|c:\\users\\tesio\\documents\\progettocapolavoro2025\\capolavoro2025_solution\\capolavoro2025\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|solutionrelative:capolavoro2025\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\capolavoro2025\\clsfileordine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|solutionrelative:capolavoro2025\\clsfileordine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|c:\\users\\tesio\\documents\\progettocapolavoro2025\\capolavoro2025_solution\\capolavoro2025\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|solutionrelative:capolavoro2025\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|c:\\users\\tesio\\documents\\progettocapolavoro2025\\capolavoro2025_solution\\capolavoro2025\\clsfilemagazzino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|solutionrelative:capolavoro2025\\clsfilemagazzino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|c:\\users\\tesio\\documents\\progettocapolavoro2025\\capolavoro2025_solution\\capolavoro2025\\formordine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\capolavoro2025\\formordine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|solutionrelative:capolavoro2025\\formordine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\capolavoro2025\\formordine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|solutionrelative:capolavoro2025\\formordine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\capolavoro2025\\formmagazzino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|solutionrelative:capolavoro2025\\formmagazzino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\capolavoro2025\\clsfilemagazzino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|solutionrelative:capolavoro2025\\clsfilemagazzino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\capolavoro2025\\magazzino.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|solutionrelative:capolavoro2025\\magazzino.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\capolavoro2025\\clsfileordine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{139625F8-3ADE-4F61-8FB7-84FE51483DFA}|Capolavoro2025\\Capolavoro2025.csproj|solutionrelative:capolavoro2025\\clsfileordine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,44 +26,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FormMain.cs",
-              "DocumentMoniker": "C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\Capolavoro2025\\FormMain.cs",
-              "RelativeDocumentMoniker": "Capolavoro2025\\FormMain.cs",
-              "ToolTip": "C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\Capolavoro2025\\FormMain.cs*",
-              "RelativeToolTip": "Capolavoro2025\\FormMain.cs*",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAswE4AAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T16:30:39.957Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormMain.cs [Progettazione]",
-              "DocumentMoniker": "C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\Capolavoro2025\\FormMain.cs",
-              "RelativeDocumentMoniker": "Capolavoro2025\\FormMain.cs",
-              "ToolTip": "C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\Capolavoro2025\\FormMain.cs [Progettazione]*",
-              "RelativeToolTip": "Capolavoro2025\\FormMain.cs [Progettazione]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T16:27:52.667Z",
-              "EditorCaption": " [Progettazione]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "ClsFileMagazzino.cs",
               "DocumentMoniker": "C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\Capolavoro2025\\ClsFileMagazzino.cs",
               "RelativeDocumentMoniker": "Capolavoro2025\\ClsFileMagazzino.cs",
               "ToolTip": "C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\Capolavoro2025\\ClsFileMagazzino.cs",
               "RelativeToolTip": "Capolavoro2025\\ClsFileMagazzino.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAjwDoAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAkwIwAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T18:00:01.705Z",
+              "WhenOpened": "2025-05-17T17:10:55.411Z",
               "EditorCaption": ""
             },
             {
@@ -96,39 +55,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FormMagazzino.cs",
-              "DocumentMoniker": "C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\Capolavoro2025\\FormMagazzino.cs",
-              "RelativeDocumentMoniker": "Capolavoro2025\\FormMagazzino.cs",
-              "ToolTip": "C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\Capolavoro2025\\FormMagazzino.cs",
-              "RelativeToolTip": "Capolavoro2025\\FormMagazzino.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAADwv1wAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T16:16:41.535Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "magazzino.txt",
-              "DocumentMoniker": "C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\Capolavoro2025\\magazzino.txt",
-              "RelativeDocumentMoniker": "Capolavoro2025\\magazzino.txt",
-              "ToolTip": "C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\Capolavoro2025\\magazzino.txt",
-              "RelativeToolTip": "Capolavoro2025\\magazzino.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKoAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-05-14T18:41:20.606Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "ClsFileOrdine.cs",
               "DocumentMoniker": "C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\Capolavoro2025\\ClsFileOrdine.cs",
               "RelativeDocumentMoniker": "Capolavoro2025\\ClsFileOrdine.cs",
               "ToolTip": "C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\Capolavoro2025\\ClsFileOrdine.cs",
               "RelativeToolTip": "Capolavoro2025\\ClsFileOrdine.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAmwHcAAABDAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwDsAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T18:18:07.788Z",
               "EditorCaption": ""
@@ -141,7 +74,7 @@
               "RelativeDocumentMoniker": "Capolavoro2025\\FormOrdine.cs",
               "ToolTip": "C:\\Users\\tesio\\Documents\\ProgettoCapolavoro2025\\Capolavoro2025_Solution\\Capolavoro2025\\FormOrdine.cs",
               "RelativeToolTip": "Capolavoro2025\\FormOrdine.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAADwv3MAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAgwI8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T17:09:21.503Z",
               "EditorCaption": ""

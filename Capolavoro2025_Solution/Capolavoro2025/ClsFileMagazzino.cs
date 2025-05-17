@@ -98,11 +98,11 @@ namespace Capolavoro2025
             return trovato;
         }
 
-        public static bool RimuoviPezziAlFile(string magazzinoFile, string oggetto, string materiale, string dimensione, string peso,string Costo, int quantità, string codice)
+        public static bool RimuoviPezziAlFile(string magazzinoFile, int quantità, string codice)
         {
             Pezzo pezzoDaRimuovere = new Pezzo();
             pezzoDaRimuovere.Codice = codice;
-            pezzoDaRimuovere.Quantita = quantità;
+            pezzoDaRimuovere.Quantita = (int)quantità;
 
             List<string> righe = new List<string>();
             bool rimosso = false;
@@ -113,14 +113,14 @@ namespace Capolavoro2025
                 string riga = sr.ReadLine();
                 string[] valori = riga.Split('-');
 
-                if (valori[5] == pezzoDaRimuovere.Codice)
+                if (valori[6] == pezzoDaRimuovere.Codice)
                 {
                     int quantitaAttuale = Convert.ToInt32(valori[5]);
                     int nuovaQuantita = quantitaAttuale - pezzoDaRimuovere.Quantita;
 
                     if (nuovaQuantita > 0)
                     {
-                        righe.Add($"{valori[0]}-{valori[1]}-{valori[2]}-{valori[3]}-{valori[4]}-{nuovaQuantita}-{valori[5]}");
+                        righe.Add($"{valori[0]}-{valori[1]}-{valori[2]}-{valori[3]}-{valori[4]}-{nuovaQuantita}-{valori[6]}");
                     }
                     rimosso = true;
                 }

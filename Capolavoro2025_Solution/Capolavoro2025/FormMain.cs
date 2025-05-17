@@ -52,11 +52,7 @@ namespace Capolavoro2025
                 this.Hide();
                 form.Show();
                 string message = ClsFileOrdine.CreaOrdine();
-                if (message != "")
-                {
-                    MessageBox.Show(message, "INFORMAZIONE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
+                if (message == "")
                 {
                     MessageBox.Show("Errore nella creazione dell' ordine", "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }

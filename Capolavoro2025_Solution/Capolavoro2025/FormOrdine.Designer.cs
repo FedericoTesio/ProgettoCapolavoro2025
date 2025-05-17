@@ -34,7 +34,7 @@
             this.btnAggiungiPezzo = new System.Windows.Forms.Button();
             this.btnRimuoviPezzoOrdine = new System.Windows.Forms.Button();
             this.btnInviaOrdine = new System.Windows.Forms.Button();
-            this.btnEllliminaOrdine = new System.Windows.Forms.Button();
+            this.btnEliminaOrdine = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMagazzino)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrdine)).BeginInit();
             this.SuspendLayout();
@@ -108,24 +108,24 @@
             this.btnInviaOrdine.UseVisualStyleBackColor = true;
             this.btnInviaOrdine.Click += new System.EventHandler(this.btnInviaOrdine_Click);
             // 
-            // btnEllliminaOrdine
+            // btnEliminaOrdine
             // 
-            this.btnEllliminaOrdine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEllliminaOrdine.Location = new System.Drawing.Point(660, 395);
-            this.btnEllliminaOrdine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEllliminaOrdine.Name = "btnEllliminaOrdine";
-            this.btnEllliminaOrdine.Size = new System.Drawing.Size(209, 37);
-            this.btnEllliminaOrdine.TabIndex = 36;
-            this.btnEllliminaOrdine.Text = "Ellimina ordine";
-            this.btnEllliminaOrdine.UseVisualStyleBackColor = true;
-            this.btnEllliminaOrdine.Click += new System.EventHandler(this.btnEllliminaOrdine_Click);
+            this.btnEliminaOrdine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminaOrdine.Location = new System.Drawing.Point(660, 395);
+            this.btnEliminaOrdine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminaOrdine.Name = "btnEliminaOrdine";
+            this.btnEliminaOrdine.Size = new System.Drawing.Size(209, 37);
+            this.btnEliminaOrdine.TabIndex = 36;
+            this.btnEliminaOrdine.Text = "Elimina ordine";
+            this.btnEliminaOrdine.UseVisualStyleBackColor = true;
+            this.btnEliminaOrdine.Click += new System.EventHandler(this.btnEliminaOrdine_Click);
             // 
             // FormOrdine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 498);
-            this.Controls.Add(this.btnEllliminaOrdine);
+            this.Controls.Add(this.btnEliminaOrdine);
             this.Controls.Add(this.btnInviaOrdine);
             this.Controls.Add(this.btnRimuoviPezzoOrdine);
             this.Controls.Add(this.btnAggiungiPezzo);
@@ -152,6 +152,6 @@
         private System.Windows.Forms.Button btnAggiungiPezzo;
         private System.Windows.Forms.Button btnRimuoviPezzoOrdine;
         private System.Windows.Forms.Button btnInviaOrdine;
-        private System.Windows.Forms.Button btnEllliminaOrdine;
+        private System.Windows.Forms.Button btnEliminaOrdine;
     }
 }

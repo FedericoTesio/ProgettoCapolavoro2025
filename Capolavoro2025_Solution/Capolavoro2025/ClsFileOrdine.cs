@@ -23,20 +23,19 @@ namespace Capolavoro2025
 
         public static string CreaOrdine()
         {
-            string OrdineFile = "Ordine.txt";
-            File.Create(OrdineFile).Close();
+            string fileOrdine = "ordine.txt";
+            File.Create(fileOrdine).Close();
 
-            if (File.Exists(OrdineFile))
+            if (File.Exists(fileOrdine))
             {
                 return "Ordine creato corretamente";
-
             }
             return "";
         }
 
-        private static bool CercaPezzoNelOrdine(string OrdineFile, string pezzo)
+        public static bool CercaPezzoNellOrdine(string fileOrdine, string pezzo)
         {
-            StreamReader sr = new StreamReader(OrdineFile);
+            StreamReader sr = new StreamReader(fileOrdine);
             while (!sr.EndOfStream)
             {
                 string riga = sr.ReadLine();
@@ -52,21 +51,13 @@ namespace Capolavoro2025
             return false;
         }
 
-        public static string[] AggiungiPezzoOrdine(string pezzo, int quantita, string OrdineFile)
+        public static string[] AggiungiPezzoOrdine(string pezzo, int quantita, string fileOrdine)
         {
-            bool PezzoGiaPresente = CercaPezzoNelOrdine(OrdineFile, pezzo);
-
-            if (PezzoGiaPresente)
-            {
-                string[] message = { "Il pezzo è già presente nell'ordine!", "0" };
-                return message;
-            }
-
             // Popolo la struct così mi salvo i dati del pezzo
             Pezzo PezzoStruct = new Pezzo();
             StreamReader sr = new StreamReader("magazzino.txt");
             bool trovato = false;
-            while (!sr.EndOfStream || !trovato)
+            while (!sr.EndOfStream && !trovato)
             {
                 string riga = sr.ReadLine();
                 string[] valori = riga.Split('-');
@@ -84,14 +75,23 @@ namespace Capolavoro2025
                 }
             }
             sr.Close();
+
             if (trovato)
             {
-                StreamWriter sw = new StreamWriter(OrdineFile, true);
-                sw.WriteLine($"{PezzoStruct.Nome}-{PezzoStruct.Materiale}-{PezzoStruct.Dimensione}-{PezzoStruct.Peso}-{PezzoStruct.Costo}-{quantita}-{pezzo}");
-                sw.Close();
-                string[] message = { "Pezzo aggiunto all'ordine correttamente!", "1" };
-                ClsFileMagazzino.RimuoviPezziAlFile("magazzino.txt", PezzoStruct.Nome, PezzoStruct.Materiale, PezzoStruct.Dimensione, PezzoStruct.Peso, PezzoStruct.Costo, PezzoStruct.Quantita, PezzoStruct.Codice);
-                return message;
+                bool rimosso = ClsFileMagazzino.RimuoviPezziAlFile("magazzino.txt", quantita, PezzoStruct.Codice);
+                if (rimosso)
+                {
+                    StreamWriter sw = new StreamWriter(fileOrdine, true);
+                    sw.WriteLine($"{PezzoStruct.Nome}-{PezzoStruct.Materiale}-{PezzoStruct.Dimensione}-{PezzoStruct.Peso}-{PezzoStruct.Costo}-{quantita}-{pezzo}");
+                    sw.Close();
+                    string[] message = { "Pezzo aggiunto all'ordine correttamente!", "1" };
+                    return message;
+                }
+                else
+                {
+                    string[] message = { "Pezzo non trovato!", "2" };
+                    return message;
+                }
             }
             else
             {
@@ -100,7 +100,7 @@ namespace Capolavoro2025
             }
         }
 
-        internal static void ElliminaOrdine(string file)
+        internal static void EliminaOrdine(string file)
         {
             File.Delete(file);
         }
@@ -120,9 +120,8 @@ namespace Capolavoro2025
                 prezzo = Convert.ToInt32(valori[4].Replace("€", ""));
                 prezzoTotale += prezzo * quantita;
             }
-            return prezzoTotale.ToString() + "€";
-
             sr.Close();
+            return prezzoTotale.ToString() + "€";
         }
 
         internal static void RiportaQuantits(string fileOrdine, string fileMagazzino)
@@ -135,7 +134,6 @@ namespace Capolavoro2025
                 string[] valori = riga.Split('-');
                 ClsFileMagazzino.AggiungiPezziAlFile(fileMagazzino, valori[0], valori[1], valori[2], valori[3], valori[4], Convert.ToInt32(valori[5]), valori[6]);
             }
-
             sr.Close();
         }
     }

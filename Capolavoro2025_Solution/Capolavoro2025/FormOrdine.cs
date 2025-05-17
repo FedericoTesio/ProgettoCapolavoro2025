@@ -42,7 +42,7 @@ namespace Capolavoro2025
         private void FormOrdine_Load(object sender, EventArgs e)
         {
             SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "magazzino.txt");
-            SettaDgv(DgvOrdine, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "ordine.txt");
+            //SettaDgv(DgvOrdine, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "ordine.txt");
         }
 
         private void SettaDgv(DataGridView dgv, string intestazioni, string file)
@@ -113,23 +113,38 @@ namespace Capolavoro2025
                     }
                 }
             } while (pezzo == "" || Convert.ToInt32(quantita) <= 0);
+
+            bool PezzoGiaPresente = ClsFileOrdine.CercaPezzoNellOrdine("ordine.txt", pezzo);
+
+            if (PezzoGiaPresente)
+            {
+                MessageBox.Show("Il pezzo è già presente nell'ordine!", "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DialogResult annullaRisultato = MessageBox.Show("Vuoi aumentare la quantità del pezzo nell'ordine?", "Conferma Aumento Quantità", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (annullaRisultato != DialogResult.Yes)
+                {
+                    return;
+                }
+            }
+
             string[] message = ClsFileOrdine.AggiungiPezzoOrdine(pezzo, Convert.ToInt32(quantita), "ordine.txt");
-            SettaDgv(DgvOrdine, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "ordine.txt");
-            SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "magazzino.txt");
 
             if (Convert.ToInt32(message[1]) == 2)
             {
                 MessageBox.Show(message[0], "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
             else
             {
                 MessageBox.Show(message[0], "INFORMAZIONE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
+
+            SettaDgv(DgvOrdine, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "ordine.txt");
+            SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "magazzino.txt");
         }
 
-        private void btnEllliminaOrdine_Click(object sender, EventArgs e)
+        private void btnEliminaOrdine_Click(object sender, EventArgs e)
         {
-            ClsFileOrdine.ElliminaOrdine("ordine.txt");
+            ClsFileOrdine.EliminaOrdine("ordine.txt");
             SettaDgv(DgvOrdine, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "ordine.txt");
             ClsFileOrdine.RiportaQuantits("ordine.txt", "magazzino.txt");
             SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "magazzino.txt");
@@ -143,7 +158,7 @@ namespace Capolavoro2025
             if (confermaRisultato == DialogResult.Yes)
             {
                 MessageBox.Show("Ordine inviato con successo", "INFORMAZIONE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                ClsFileOrdine.ElliminaOrdine("ordine.txt");
+                ClsFileOrdine.EliminaOrdine("ordine.txt");
                 ClsFileOrdine.CreaOrdine();
                 SettaDgv(DgvOrdine, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "ordine.txt");
             }
