@@ -15,6 +15,8 @@ namespace Capolavoro2025
     {
         private static List<Form> allForms = new List<Form>();
 
+        private bool PassVisbleOrNot = false;
+
         public FormMain()
         {
             InitializeComponent();
@@ -42,19 +44,57 @@ namespace Capolavoro2025
 
         private void btnInviaDati_Click(object sender, EventArgs e)
         {
-            FormOrdine form = new FormOrdine();
-            allForms.Add(form);
-            this.Close();
-            this.Hide();
-            form.Show();
-            string message = ClsFileOrdine.CreaOrdine();
-            if (message != "")
+            if (txtUtente.Text.ToLower() == "cliente" && txtPassword.Text == "Cliente12&")
             {
-                MessageBox.Show(message, "INFORMAZIONE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FormOrdine form = new FormOrdine();
+                allForms.Add(form);
+                this.Close();
+                this.Hide();
+                form.Show();
+                string message = ClsFileOrdine.CreaOrdine();
+                if (message != "")
+                {
+                    MessageBox.Show(message, "INFORMAZIONE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Errore nella creazione dell' ordine", "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else if (txtUtente.Text.ToLower() == "commesso" && txtPassword.Text == "Commesso69£")
+            {
+                FormMagazzino form = new FormMagazzino();
+                allForms.Add(form);
+                this.Close();
+                this.Hide();
+                form.Show();
             }
             else
             {
-                MessageBox.Show("Errore nella creazione dell' ordine", "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nome Utente o Password non corretti!\nRiprova", "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PassVisbleOrNot = false;
+                txtPassword.UseSystemPasswordChar = true;
+                btnVisualizzaPassword.Text = "👀";
+                PassVisbleOrNot = false;
+                txtUtente.Text = "";
+                txtPassword.Text = "";
+            }
+        }
+
+        private void btnVisualizzaPassword_Click(object sender, EventArgs e)
+        {
+            if (PassVisbleOrNot)
+            {
+                txtPassword.UseSystemPasswordChar = true;
+                btnVisualizzaPassword.Text = "👀";
+                PassVisbleOrNot = false;
+
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = false;
+                btnVisualizzaPassword.Text = "👁";
+                PassVisbleOrNot = true;
             }
         }
     }

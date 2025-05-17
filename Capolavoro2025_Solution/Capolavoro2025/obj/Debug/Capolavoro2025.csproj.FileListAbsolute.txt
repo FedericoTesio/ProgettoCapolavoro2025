@@ -49,3 +49,16 @@ C:\Users\f.tesio.3619\Documents\ProgettoCapolavoro2025\Capolavoro2025_Solution\C
 C:\Users\tesio\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.FormMagazzino.resources
 C:\Users\Pc\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.FormMagazzino.resources
 C:\Users\Pc\Desktop\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.FormOrdine.resources
+C:\Users\tesio\Documents\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\bin\Debug\magazzino.txt
+C:\Users\tesio\Documents\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\bin\Debug\Capolavoro2025.exe.config
+C:\Users\tesio\Documents\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\bin\Debug\Capolavoro2025.exe
+C:\Users\tesio\Documents\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\bin\Debug\Capolavoro2025.pdb
+C:\Users\tesio\Documents\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.csproj.AssemblyReference.cache
+C:\Users\tesio\Documents\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.FormMagazzino.resources
+C:\Users\tesio\Documents\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.FormMain.resources
+C:\Users\tesio\Documents\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.FormOrdine.resources
+C:\Users\tesio\Documents\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.Properties.Resources.resources
+C:\Users\tesio\Documents\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.csproj.GenerateResource.cache
+C:\Users\tesio\Documents\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.csproj.CoreCompileInputs.cache
+C:\Users\tesio\Documents\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.exe
+C:\Users\tesio\Documents\ProgettoCapolavoro2025\Capolavoro2025_Solution\Capolavoro2025\obj\Debug\Capolavoro2025.pdb
