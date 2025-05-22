@@ -167,5 +167,52 @@ namespace Capolavoro2025
                 MessageBox.Show("Ordine non inviato", "INFORMAZIONE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
         }
+
+        private void btnRimuoviPezzoOrdine_Click(object sender, EventArgs e)
+        {
+            string pezzo;
+            string quantitaStr;
+            int quantita;
+
+            // Ciclo di input con validazione numerica e non nullità
+            do
+            {
+                pezzo = Interaction.InputBox("Inserisci il codice dell'oggetto da rimuovere dall'ordine:");
+                quantitaStr = Interaction.InputBox("Inserisci la quantità del pezzo da rimuovere dall'ordine:");
+
+                if (string.IsNullOrWhiteSpace(pezzo) || string.IsNullOrWhiteSpace(quantitaStr))
+                {
+                    DialogResult annullaRisultato = MessageBox.Show("Vuoi annullare l'operazione?", "Conferma Annullamento", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (annullaRisultato == DialogResult.Yes)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Inserire un pezzo e una quantità validi!", "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else if (!int.TryParse(quantitaStr, out quantita) || quantita <= 0)
+                {
+                    MessageBox.Show("La quantità deve essere un numero intero positivo!", "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    pezzo = ""; // Forza il ciclo a ripetere
+                }
+            } while (string.IsNullOrWhiteSpace(pezzo) || !int.TryParse(quantitaStr, out quantita) || quantita <= 0);
+
+            string[] message = ClsFileOrdine.RimuoviPezzoOrdine(pezzo, quantita, "ordine.txt");
+
+            // Correggi la gestione del codice di ritorno: "1" = successo, "0" = errore
+            if (message.Length > 1 && message[1] == "0")
+            {
+                MessageBox.Show(message[0], "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show(message[0], "INFORMAZIONE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            SettaDgv(DgvOrdine, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "ordine.txt");
+            SettaDgv(DgvMagazzino, "Oggetto Materiale Dimensione Peso Costo Quantità Codice", "magazzino.txt");
+        }
     }
 }

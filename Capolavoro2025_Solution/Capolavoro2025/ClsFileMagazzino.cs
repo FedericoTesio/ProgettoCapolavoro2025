@@ -11,7 +11,6 @@ namespace Capolavoro2025
 {
     internal class ClsFileMagazzino
     {
-
         public struct Pezzo
         {
             public string Nome;
@@ -25,15 +24,16 @@ namespace Capolavoro2025
 
         public static void RiempiDgv(DataGridView dgv, string inputFile)
         {
-            StreamReader sr = new StreamReader(inputFile);
             dgv.Rows.Clear();
-            while (!sr.EndOfStream)
+            using (StreamReader sr = new StreamReader(inputFile))
             {
-                string riga = sr.ReadLine();
-                string[] valori = riga.Split('-');
-                dgv.Rows.Add(valori);
+                while (!sr.EndOfStream)
+                {
+                    string riga = sr.ReadLine();
+                    string[] valori = riga.Split('-');
+                    dgv.Rows.Add(valori);
+                }
             }
-            sr.Close();
         }
         /// <summary>
         /// Aggiunge un pezzo al file di input. Se il pezzo esiste già, aggiorna la quantità.
@@ -61,39 +61,41 @@ namespace Capolavoro2025
             List<string> righe = new List<string>();
             bool trovato = false;
 
-            StreamReader sr = new StreamReader(magazzinoFile);
-            while (!sr.EndOfStream)
+            if (File.Exists(magazzinoFile))
             {
-                string riga = sr.ReadLine();
-                string[] valori = riga.Split('-');
+                using (StreamReader sr = new StreamReader(magazzinoFile))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        string riga = sr.ReadLine();
+                        string[] valori = riga.Split('-');
 
-                // controllo se il pezzo esiste già 
-                if (valori[6] == nuovoPezzo.Codice)
-                {
-                    trovato = true;
-                    int nuovaQuantita = Convert.ToInt32(valori[5]) + nuovoPezzo.Quantita;
-                    righe.Add($"{valori[0]}-{valori[1]}-{valori[2]}-{valori[3]}-{valori[4]}-{nuovaQuantita}-{valori[6]}");
-                }
-                else
-                {
-                    righe.Add(riga);
+                        if (valori[6] == nuovoPezzo.Codice)
+                        {
+                            trovato = true;
+                            int nuovaQuantita = Convert.ToInt32(valori[5]) + nuovoPezzo.Quantita;
+                            righe.Add($"{valori[0]}-{valori[1]}-{valori[2]}-{valori[3]}-{valori[4]}-{nuovaQuantita}-{valori[6]}");
+                        }
+                        else
+                        {
+                            righe.Add(riga);
+                        }
+                    }
                 }
             }
-            sr.Close();
 
-            // aggiungo il pezzo non esistente
             if (!trovato)
             {
                 righe.Add($"{nuovoPezzo.Nome}-{nuovoPezzo.Materiale}-{nuovoPezzo.Dimensione}-{nuovoPezzo.Peso}-{nuovoPezzo.Costo}-{nuovoPezzo.Quantita}-{nuovoPezzo.Codice}");
             }
 
-            // utilizzo un bool pk devo capire se devo sovrascrivere(false) o aggiungere(true)
-            StreamWriter sw = new StreamWriter(magazzinoFile, true);
-            for (int i = 0; i < righe.Count; i++)
+            using (StreamWriter sw = new StreamWriter(magazzinoFile, false))
             {
-                sw.WriteLine(righe[i]);
+                for (int i = 0; i < righe.Count; i++)
+                {
+                    sw.WriteLine(righe[i]);
+                }
             }
-            sw.Close();
 
             return trovato;
         }
@@ -102,41 +104,46 @@ namespace Capolavoro2025
         {
             Pezzo pezzoDaRimuovere = new Pezzo();
             pezzoDaRimuovere.Codice = codice;
-            pezzoDaRimuovere.Quantita = (int)quantità;
+            pezzoDaRimuovere.Quantita = quantità;
 
             List<string> righe = new List<string>();
             bool rimosso = false;
 
-            StreamReader sr = new StreamReader(magazzinoFile);
-            while (!sr.EndOfStream)
+            if (File.Exists(magazzinoFile))
             {
-                string riga = sr.ReadLine();
-                string[] valori = riga.Split('-');
-
-                if (valori[6] == pezzoDaRimuovere.Codice)
+                using (StreamReader sr = new StreamReader(magazzinoFile))
                 {
-                    int quantitaAttuale = Convert.ToInt32(valori[5]);
-                    int nuovaQuantita = quantitaAttuale - pezzoDaRimuovere.Quantita;
-
-                    if (nuovaQuantita > 0)
+                    while (!sr.EndOfStream)
                     {
-                        righe.Add($"{valori[0]}-{valori[1]}-{valori[2]}-{valori[3]}-{valori[4]}-{nuovaQuantita}-{valori[6]}");
-                    }
-                    rimosso = true;
-                }
-                else
-                {
-                    righe.Add(riga);
-                }
-            }
-            sr.Close();
+                        string riga = sr.ReadLine();
+                        string[] valori = riga.Split('-');
 
-            StreamWriter sw = new StreamWriter(magazzinoFile, false);
-            for (int i = 0; i < righe.Count; i++)
-            {
-                sw.WriteLine(righe[i]);
+                        if (valori[6] == pezzoDaRimuovere.Codice)
+                        {
+                            int quantitaAttuale = Convert.ToInt32(valori[5]);
+                            int nuovaQuantita = quantitaAttuale - pezzoDaRimuovere.Quantita;
+
+                            if (nuovaQuantita > 0)
+                            {
+                                righe.Add($"{valori[0]}-{valori[1]}-{valori[2]}-{valori[3]}-{valori[4]}-{nuovaQuantita}-{valori[6]}");
+                            }
+                            rimosso = true;
+                        }
+                        else
+                        {
+                            righe.Add(riga);
+                        }
+                    }
+                }
             }
-            sw.Close();
+
+            using (StreamWriter sw = new StreamWriter(magazzinoFile, false))
+            {
+                for (int i = 0; i < righe.Count; i++)
+                {
+                    sw.WriteLine(righe[i]);
+                }
+            }
 
             return rimosso;
         }
@@ -145,21 +152,22 @@ namespace Capolavoro2025
         {
             int cont = 0;
             string message = "";
-            StreamReader sr = new StreamReader(magazzinoFile);
-            while (!sr.EndOfStream)
+            using (StreamReader sr = new StreamReader(magazzinoFile))
             {
-                string riga = sr.ReadLine();
-                string[] valori = riga.Split('-');
-
-                if (pezzo == valori[6])
+                while (!sr.EndOfStream)
                 {
-                    message = $"L'elemento con codice {pezzo} si trova alla posizione {cont} del magazzino\nEcco i sui dati:\nOggetto: {valori[0]}\nMateriale: {valori[1]}\nDimensione: {valori[2]}\nPeso: {valori[3]}\nCosto: {valori[4]}\nQuantità: {valori[5]}\nCodice: {valori[6]}";
-                    dgvMagazzino.Rows[cont].Selected = true;
-                    break;
-                }
-                cont++;
-            }
+                    string riga = sr.ReadLine();
+                    string[] valori = riga.Split('-');
 
+                    if (pezzo == valori[6])
+                    {
+                        message = $"L'elemento con codice {pezzo} si trova alla posizione {cont} del magazzino\nEcco i sui dati:\nOggetto: {valori[0]}\nMateriale: {valori[1]}\nDimensione: {valori[2]}\nPeso: {valori[3]}\nCosto: {valori[4]}\nQuantità: {valori[5]}\nCodice: {valori[6]}";
+                        dgvMagazzino.Rows[cont].Selected = true;
+                        break;
+                    }
+                    cont++;
+                }
+            }
             return message;
         }
     }

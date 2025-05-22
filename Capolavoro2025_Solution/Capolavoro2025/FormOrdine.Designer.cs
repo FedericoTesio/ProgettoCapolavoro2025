@@ -95,6 +95,7 @@
             this.btnRimuoviPezzoOrdine.TabIndex = 34;
             this.btnRimuoviPezzoOrdine.Text = "Rimuovi pezzo dall\'ordine";
             this.btnRimuoviPezzoOrdine.UseVisualStyleBackColor = true;
+            this.btnRimuoviPezzoOrdine.Click += new System.EventHandler(this.btnRimuoviPezzoOrdine_Click);
             // 
             // btnInviaOrdine
             // 
